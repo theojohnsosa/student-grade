@@ -1,38 +1,236 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #0c0c10;
+  color: #e5e7eb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.dashboard {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 18px 32px;
+  background: #131318;
+  border-bottom: 1px solid #24242c;
 }
 
-.App-link {
-  color: #61dafb;
+.brand {
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #ffffff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.record-count {
+  font-size: 13px;
+  color: #8b8b96;
+}
+
+.layout {
+  flex: 1;
+  display: flex;
+}
+
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 28px 24px;
+  background: #131318;
+  border-right: 1px solid #24242c;
+}
+
+.sidebar-title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #7c7c88;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  padding: 10px 12px;
+  background: #1b1b22;
+  border: 1px solid #2a2a33;
+  border-radius: 6px;
+  color: #f1f1f3;
+  font-size: 14px;
+  outline: none;
+}
+
+.field input::placeholder {
+  color: #55555f;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #ffffff;
+}
+
+.field select option {
+  background: #1b1b22;
+}
+
+.equivalent-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: #1b1b22;
+  border: 1px solid #2a2a33;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.equivalent-box strong {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.btn-solid {
+  background: #ffffff;
+  color: #0c0c10;
+  flex: 1;
+}
+
+.btn-solid:hover {
+  opacity: 0.85;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #3a3a45;
+  flex: 1;
+}
+
+.btn-outline:hover {
+  border-color: #ffffff;
+}
+
+button.small {
+  padding: 7px 12px;
+  font-size: 12px;
+  flex: none;
+}
+
+.content {
+  flex: 1;
+  padding: 28px 32px;
+  overflow-y: auto;
+}
+
+.empty-state {
+  color: #6b6b76;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.record-card {
+  background: #131318;
+  border: 1px solid #24242c;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: border 0.15s ease;
+}
+
+.record-card:hover {
+  border-color: #4a4a56;
+}
+
+.record-card img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #22222a;
+  border: 1px solid #33333d;
+  margin-bottom: 10px;
+}
+
+.record-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0 0 2px;
+}
+
+.record-meta {
+  font-size: 12px;
+  color: #7c7c88;
+  margin: 0 0 10px;
+}
+
+.record-stats {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 14px;
+}
+
+.record-stats strong {
+  color: #ffffff;
+}
+
+.record-actions {
+  display: flex;
+  gap: 8px;
 }
